@@ -53,3 +53,15 @@ JavaScript的垃圾回收机制是一种自动管理内存的系统，它负责�
 然而，引用计数有一个很明显的缺点，就是无法处理循环引用。如果两个或多个对象相互引用，它们的引用计数永远不会为0，即使它们已经不再被程序所使用，这将导致内存泄漏。
 
 大多数现代JavaScript引擎（如V8、SpiderMonkey、JavaScriptCore等）都采用标记-清除算法作为主要的垃圾回收策略，并结合其他技术来解决引用计数无法处理的问题，以提高内存管理的效率和性能。
+
+
+## 各种宽高属性
+1、clientWidth：目标元素的width+padding(左右两侧)
+2、offsetWidth：目标元素的width+padding(左右两侧)+border(左右两侧)
+3、clientLeft：目标元素左边框border的宽度
+4、offsetLeft：目标元素左边框离其具有定位的父元素之间的距离
+5、clientX：鼠标相对于浏览器窗口可视区域的X坐标（横向）
+6、offsetX：鼠标相对于绑定事件元素的X坐标
+7、pageX：鼠标相对于文档的X坐标，会计算滚动距离；如果没有滚动距离，值与clientX一样
+8、screenX：鼠标相对于显示器屏幕左侧的X坐标
+9、getBoundingClientRect().left：目标元素左边框相对于浏览器可视区域的距离，可能为负值
